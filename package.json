@@ -1,0 +1,22 @@
+{
+  "name": "nairabox_pay_qr",
+  "version": "1.0.0",
+  "description": "A QR code generator for nairabox pay written on NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaelvons/nairabox_pay_qr.git"
+  },
+  "author": "Mikky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michaelvons/nairabox_pay_qr/issues"
+  },
+  "homepage": "https://github.com/Michaelvons/nairabox_pay_qr#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

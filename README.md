@@ -3,7 +3,9 @@
 A nodeJS QR code generator app for nairabox pay
 
 ### To Run
+
 $ npm install 
+
 $ node app
 
 

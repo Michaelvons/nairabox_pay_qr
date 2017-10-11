@@ -2,10 +2,10 @@
 
 A nodeJS QR code generator app for nairabox pay
 
-##To Run
+## To Run
 npm install 
 node app
 
 
-##API 
+#API 
 http://localhost:3000/api/qrcode

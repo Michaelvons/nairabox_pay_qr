@@ -15,17 +15,17 @@ module.exports.generateQrcode = function(req, res){
 
   console.log('Generating QRcode');
 
-/*   qrimage
+  qrimage
   .image("sample qr code", "M", {type:'png',size:150})
-  .pipe(fs.createWriteStream("assets/image/qrFile.png")); */
+  .pipe(fs.createWriteStream("assets/image/qrFile.png"));
   
-	var qrimage = qr.svgObject("test image here", "M", {type:'png',size:20});
-	console.log(qrimage);
+/* 	var qrimage = qr.image("test image here", "M", {type:'png',size:20}).pipe(fs.createWriteStream("assets/image/qrFile.png"));
+	console.log(qrimage); */
 
 	res
       .status(200)
       .json({ "status" : true ,
-			"image" : qrimage,
+			"image" : "image file path",
 			"mid":190278397638
 			});
 	

@@ -8,10 +8,33 @@ var homeDir = "http://localhost:3000/";
 
 module.exports.generateQrcodeWithID = function (req, res){
 	var merchantID = req.params.mid;
+	var timestamp = Date.now();
+	var imgPath = homeDir + fileDir + timestamp+".png";
+	
+	console.log('Generating QRcode');
     console.log('GET the qrcode with merchant ID ' + merchantID);
-    res
+	
+	
+	qrimage
+		.image("sample qr code", "M", {type:'png',size:150})
+		.pipe(fs.createWriteStream(fileDir + timestamp +".png"));
+		
+
+  
+/* 	var qrimage = qr.image("test image here", "M", {type:'png',size:20}).pipe(fs.createWriteStream("assets/image/qrFile.png"));
+	console.log(qrimage); */
+
+	res
       .status(200)
-      .json({ "status" : true ,"merchantID" : merchantID});
+      .json({ "status" : true,
+			"timestamp":timestamp,
+			"image" : imgPath,
+			"merchantID" : merchantID,
+			
+			});
+/*     res
+      .status(200)
+      .json({ "status" : true ,"merchantID" : merchantID}); */
 	
 };
 

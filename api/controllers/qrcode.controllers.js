@@ -5,6 +5,16 @@ var qr = require('qr-image');
 var fileDir = "api/assets/image/";
 var homeDir = "http://localhost:3000/";
 
+
+module.exports.generateQrcodeWithID = function (req, res){
+	var merchantID = req.params.mid;
+    console.log('GET the qrcode with merchant ID ' + merchantID);
+    res
+      .status(200)
+      .json({ "status" : true ,"merchantID" : merchantID});
+	
+};
+
 //Controller to generate QR code
 module.exports.generateQrcode = function(req, res){
 /* 	console.log('GET the qrcode');

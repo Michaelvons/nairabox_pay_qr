@@ -32,7 +32,7 @@ module.exports.generateQrcode = function(req, res){
 
 	res
       .status(200)
-      .json({ "status" : true ,
+      .json({ "status" : true,
 			"timestamp":timestamp,
 			"image" : imgPath,
 			"mid":190278397638

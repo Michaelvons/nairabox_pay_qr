@@ -8,7 +8,7 @@ router
   
   
   router
-	.route('api/assets/image/:img')
+	.route('/assets/image/')
 	.get(function(req, res) {
     console.log('GET the qrcode');
     res

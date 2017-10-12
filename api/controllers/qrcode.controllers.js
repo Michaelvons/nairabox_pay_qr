@@ -2,7 +2,7 @@
 var qrimage = require ('qr-image');
 var fs = require('fs');
 var qr = require('qr-image');
-var fileDir = "assets/image/";
+var fileDir = "api/assets/image/";
 var homeDir = "http://localhost:3000/";
 
 //Controller to generate QR code

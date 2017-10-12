@@ -6,6 +6,15 @@ router
 	.route('/qrcode')
 	.get(CtrlQrcode.generateQrcode);
   
+  
+  router
+	.route('api/assets/image/:img')
+	.get(function(req, res) {
+    console.log('GET the qrcode');
+    res
+      .status(200)
+      .json({ "status" : true ,"image" : "uri to serve image"});
+  });
 /*   router
 	.route('/qrcode')
 	.get(function(req, res) {

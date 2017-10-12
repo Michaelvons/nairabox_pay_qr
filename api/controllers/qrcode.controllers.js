@@ -16,7 +16,7 @@ module.exports.generateQrcodeWithID = function (req, res){
 	
 	
 	qrimage
-		.image("sample qr code", "M", {type:'png',size:150})
+		.image(merchantID, "M", {type:'png',size:150})
 		.pipe(fs.createWriteStream(fileDir + timestamp +".png"));
 		
 

@@ -1,21 +1,17 @@
-var qrimage = require ('qr-image');
-var fs = require('fs');
-var qr = require('qr-image');
+const qr = require('qr-image');
 
 //Controller to generate QR code using Merchant ID
 module.exports.generateQrcodeWithID = function (req, res){
-	var merchantID = req.params.mid;
-	var timestamp = Date.now();		
+	let merchantID = req.query.mid;
+	let merchantName = req.query.name;
+	let size = req.query.size || 10;
+	
+	if (!merchantID || !merchantName) 
+		return res.status(442)
+				.json({"status": "failed", "message": "missing merchantID or name parameters"})
 
-//the imageSync method returns the binary data of the genearted image	
-	var qrimage = qr.imageSync("test image here", "M", {type:'png',size:20});
-	
-	res
-      .status(200)
-      .json({ "status" : true,
-			"timestamp":timestamp,
-			"image" : qrimage,
-			"merchantID" : merchantID,		
-			});
-	
+	let toEncode = `https://scan.nairabox.com/pay/merchant/${merchantID}/${merchantName}`		
+	let qrimage = qr.image(toEncode, "M", {type:'png', size:size});
+
+	qrimage.pipe(res)
 };
